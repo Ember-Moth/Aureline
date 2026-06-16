@@ -1,5 +1,6 @@
 using Android.App;
 using Android.Runtime;
+using Aureline.Fonts;
 using Avalonia;
 using Avalonia.Android;
 
@@ -14,6 +15,8 @@ public class Application : AvaloniaAndroidApplication<global::Aureline.App>
 
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
-        return base.CustomizeAppBuilder(builder).WithInterFont();
+        return base.CustomizeAppBuilder(builder)
+            .WithInterFont()
+            .WithCjkFontFallback();
     }
 }
